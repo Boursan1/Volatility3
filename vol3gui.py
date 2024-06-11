@@ -45,7 +45,7 @@ class Volatility3GUI(tk.Tk):
         # Custom font for the GUI name
         custom_font = Font(family="Helvetica", size=20, weight="bold")
 
-        # GUI name label with bloody red color
+        # GUI name label
         self.gui_name_label = tk.Label(top_frame, text="VOL3 GUI", font=custom_font, bg='black', fg='orange')
         self.gui_name_label.pack(side=tk.LEFT, padx=10, pady=10)
 
@@ -87,7 +87,7 @@ class Volatility3GUI(tk.Tk):
         search_frame.pack(pady=5, side=tk.TOP, fill=tk.X)
 
         #self.search_label = tk.Label(search_frame, text="Search:", bg='black', fg='orange')
-        #self.search_label.pack(side=tk.LEFT)#
+        #self.search_label.pack(side=tk.LEFT)# removed but can be used in farther divolopment
 
         self.search_entry = tk.Entry(search_frame, width=50)
         self.search_entry.pack(side=tk.LEFT, padx=5)
@@ -146,7 +146,7 @@ class Volatility3GUI(tk.Tk):
         else:
             self.plugin_combo['values'] = []
 
-    def update_progress(self, value):
+    def update_progress(self, value):#solv the real time progress
         self.progress_canvas.coords(self.progress_rect, 0, 0, value * 5, 50)
         self.progress_canvas.itemconfig(self.progress_text, text=f"{int(value)}%")
 
